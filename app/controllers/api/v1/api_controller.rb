@@ -3,6 +3,7 @@ module Api
     class ApiController < ApplicationController
       protect_from_forgery with: :null_session
       before_filter :restrict_access
+      skip_before_filter  :verify_authenticity_token
       
       def authorize_user
         if authorization_token
