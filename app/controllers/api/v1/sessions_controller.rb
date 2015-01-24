@@ -11,6 +11,7 @@ module Api
             log_in user
             render json: {
               success: true,
+              id: user.id,
               user_auth_token: user.authentication_digest,
               email: user.email
             }
