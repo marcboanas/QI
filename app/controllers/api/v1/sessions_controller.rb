@@ -8,7 +8,6 @@ module Api
         if user && user.authenticate(params[:session][:password])
           if user.activated?
             user.generate_authentication_token
-            log_in user
             render json: {
               success: true,
               id: user.id,
